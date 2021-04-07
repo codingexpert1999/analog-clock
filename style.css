@@ -1,0 +1,211 @@
+:root{
+    --main-color: #443F51;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--main-color);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 10px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clock::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.hours{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    position: relative;
+}
+
+.opposites{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+}
+
+.opposites span{
+    display: block;
+    width: 8px;
+    height: 22px;
+    background: white;
+}
+
+.opposites:nth-child(2){
+    transform: rotateZ(30deg);
+}
+
+.opposites:nth-child(3){
+    transform: rotateZ(60deg);
+}
+
+.opposites:nth-child(4){
+    transform: rotateZ(90deg);
+}
+
+.opposites:nth-child(5){
+    transform: rotateZ(120deg);
+}
+
+.opposites:nth-child(6){
+    transform: rotateZ(150deg);
+}
+
+.opposites.small span{
+    width: 5px;
+    height: 15px;
+}
+
+.pointers{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointer{
+    position: absolute;
+    display: block;
+    height: 100px;
+    width: 12px;
+    background: white;
+    margin-bottom: 100px;
+    transform-origin: center bottom;
+}
+
+#minutes{
+    height: 130px;
+    width: 8px;
+    margin-bottom: 130px;
+}
+
+#seconds{
+    height: 160px;
+    width: 4px;
+    margin-bottom: 160px;
+}
+
+@media(max-width: 750px){
+    .clock{
+        width: 350px;
+        height: 350px;
+    }
+
+    .clock::after{
+        width: 20px;
+        height: 20px;
+    }
+
+    .opposites span{
+        width: 4px;
+        height: 17px;
+    }
+
+    .opposites.small span{
+        width: 2px;
+        height: 10px;
+    }
+
+    .pointer{
+        height: 60px;
+        width: 8px;
+        margin-bottom: 60px;
+    }
+    
+    #minutes{
+        height: 80px;
+        width: 5px;
+        margin-bottom: 80px;
+    }
+    
+    #seconds{
+        height: 110px;
+        width: 2px;
+        margin-bottom: 110px;
+    }
+}
+
+@media(max-width: 415px){
+    .clock{
+        width: 250px;
+        height: 250px;
+    }
+
+    .clock::after{
+        width: 14px;
+        height: 14px;
+    }
+
+    .opposites span{
+        width: 3px;
+        height: 14px;
+    }
+
+    .opposites.small span{
+        width: 2px;
+        height: 7px;
+    }
+
+    .pointer{
+        height: 50px;
+        width: 6px;
+        margin-bottom: 50px;
+    }
+    
+    #minutes{
+        height: 65px;
+        width: 4px;
+        margin-bottom: 65px;
+    }
+    
+    #seconds{
+        height: 80px;
+        width: 2px;
+        margin-bottom: 80px;
+    }
+}
